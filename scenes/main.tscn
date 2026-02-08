@@ -1,0 +1,203 @@
+[gd_scene format=3 uid="uid://b8ae071qdtqmx"]
+
+[ext_resource type="PackedScene" uid="uid://d33sg7aanijho" path="res://prefabs/spacer.tscn" id="1_o5qli"]
+[ext_resource type="Texture2D" uid="uid://c8l05r1uqvjag" path="res://planet-sprites/planet00.png" id="2_0wfyh"]
+[ext_resource type="Theme" uid="uid://p8tj8rqn8kvy" path="res://resources/ShopLabelTheme.tres" id="2_jyhfs"]
+[ext_resource type="Theme" uid="uid://doenlf68pau7h" path="res://resources/ButtonTheme.tres" id="2_sugp2"]
+[ext_resource type="Theme" uid="uid://di74y6aosbgyw" path="res://resources/HeadingTheme.tres" id="4_tbgi4"]
+[ext_resource type="Theme" uid="uid://nbtcqs11y2rr" path="res://resources/SubHeadingTheme.tres" id="5_tefeu"]
+
+[sub_resource type="Gradient" id="Gradient_sgp6g"]
+offsets = PackedFloat32Array(0.3, 0.9, 1)
+colors = PackedColorArray(0.14901961, 0.09803922, 0.26666668, 1, 0.3019608, 0.2509804, 0.5921569, 1, 0.49019608, 0.43529412, 0.99607843, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_o5qli"]
+gradient = SubResource("Gradient_sgp6g")
+width = 1920
+height = 1080
+fill_to = Vector2(0, 1)
+
+[node name="Node2D" type="Node2D" unique_id=948600047]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=112347424]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = SubResource("GradientTexture2D_o5qli")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=74388615]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1045965345]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 3840.0
+offset_bottom = 2160.0
+scale = Vector2(0.5, 0.5)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control" unique_id=1223666163]
+layout_mode = 0
+offset_right = 3840.0
+offset_bottom = 2160.0
+alignment = 1
+
+[node name="Spacer" parent="CanvasLayer/Control/HBoxContainer" unique_id=506675193 instance=ExtResource("1_o5qli")]
+layout_mode = 2
+size_flags_stretch_ratio = 0.2
+
+[node name="Left" type="VBoxContainer" parent="CanvasLayer/Control/HBoxContainer" unique_id=1916296332]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Spacer5" parent="CanvasLayer/Control/HBoxContainer/Left" unique_id=228530705 instance=ExtResource("1_o5qli")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/HBoxContainer/Left" unique_id=360825999]
+layout_mode = 2
+theme = ExtResource("2_jyhfs")
+text = "Idle Upgrades"
+horizontal_alignment = 1
+
+[node name="Spacer4" parent="CanvasLayer/Control/HBoxContainer/Left" unique_id=801978575 instance=ExtResource("1_o5qli")]
+layout_mode = 2
+size_flags_stretch_ratio = 0.1
+
+[node name="Button" type="Button" parent="CanvasLayer/Control/HBoxContainer/Left" unique_id=30746600]
+layout_mode = 2
+theme = ExtResource("2_sugp2")
+text = "Satellite"
+
+[node name="Spacer" parent="CanvasLayer/Control/HBoxContainer/Left" unique_id=1152729218 instance=ExtResource("1_o5qli")]
+layout_mode = 2
+size_flags_stretch_ratio = 0.1
+
+[node name="Button2" type="Button" parent="CanvasLayer/Control/HBoxContainer/Left" unique_id=1994265712]
+layout_mode = 2
+theme = ExtResource("2_sugp2")
+text = "Rover"
+
+[node name="Spacer2" parent="CanvasLayer/Control/HBoxContainer/Left" unique_id=327818223 instance=ExtResource("1_o5qli")]
+layout_mode = 2
+size_flags_stretch_ratio = 0.1
+
+[node name="Button3" type="Button" parent="CanvasLayer/Control/HBoxContainer/Left" unique_id=2004988596]
+layout_mode = 2
+theme = ExtResource("2_sugp2")
+text = "Rocket"
+
+[node name="Spacer3" parent="CanvasLayer/Control/HBoxContainer/Left" unique_id=517790471 instance=ExtResource("1_o5qli")]
+layout_mode = 2
+
+[node name="Spacer2" parent="CanvasLayer/Control/HBoxContainer" unique_id=1949105378 instance=ExtResource("1_o5qli")]
+layout_mode = 2
+size_flags_stretch_ratio = 0.2
+
+[node name="Middle" type="VBoxContainer" parent="CanvasLayer/Control/HBoxContainer" unique_id=85581342]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Spacer" parent="CanvasLayer/Control/HBoxContainer/Middle" unique_id=1718161800 instance=ExtResource("1_o5qli")]
+layout_mode = 2
+
+[node name="Score" type="Label" parent="CanvasLayer/Control/HBoxContainer/Middle" unique_id=258122078]
+layout_mode = 2
+theme = ExtResource("4_tbgi4")
+text = "Score: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScorePerSecond" type="Label" parent="CanvasLayer/Control/HBoxContainer/Middle" unique_id=328062922]
+layout_mode = 2
+theme = ExtResource("5_tefeu")
+text = "Score Per Second: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScorePerClick" type="Label" parent="CanvasLayer/Control/HBoxContainer/Middle" unique_id=825406255]
+layout_mode = 2
+theme = ExtResource("5_tefeu")
+text = "Score Per Click: 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlanetButton" type="TextureButton" parent="CanvasLayer/Control/HBoxContainer/Middle" unique_id=222057139]
+layout_mode = 2
+texture_normal = ExtResource("2_0wfyh")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/HBoxContainer/Middle" unique_id=596209886]
+layout_mode = 2
+
+[node name="Spacer3" parent="CanvasLayer/Control/HBoxContainer/Middle/HBoxContainer" unique_id=1759028176 instance=ExtResource("1_o5qli")]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="CanvasLayer/Control/HBoxContainer/Middle/HBoxContainer" unique_id=397631883]
+layout_mode = 2
+theme = ExtResource("2_sugp2")
+text = "<<"
+
+[node name="Spacer" parent="CanvasLayer/Control/HBoxContainer/Middle/HBoxContainer" unique_id=1190867459 instance=ExtResource("1_o5qli")]
+layout_mode = 2
+size_flags_stretch_ratio = 0.5
+
+[node name="Button2" type="Button" parent="CanvasLayer/Control/HBoxContainer/Middle/HBoxContainer" unique_id=1091586692]
+layout_mode = 2
+theme = ExtResource("2_sugp2")
+text = ">>"
+
+[node name="Spacer2" parent="CanvasLayer/Control/HBoxContainer/Middle/HBoxContainer" unique_id=222504560 instance=ExtResource("1_o5qli")]
+layout_mode = 2
+
+[node name="Spacer5" parent="CanvasLayer/Control/HBoxContainer/Middle" unique_id=2053121230 instance=ExtResource("1_o5qli")]
+layout_mode = 2
+
+[node name="Spacer3" parent="CanvasLayer/Control/HBoxContainer" unique_id=33743491 instance=ExtResource("1_o5qli")]
+layout_mode = 2
+size_flags_stretch_ratio = 0.2
+
+[node name="Right" type="VBoxContainer" parent="CanvasLayer/Control/HBoxContainer" unique_id=1680547801]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Spacer5" parent="CanvasLayer/Control/HBoxContainer/Right" unique_id=1205526698 instance=ExtResource("1_o5qli")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/HBoxContainer/Right" unique_id=980339610]
+layout_mode = 2
+theme = ExtResource("2_jyhfs")
+text = "Click Upgrades"
+horizontal_alignment = 1
+
+[node name="Spacer4" parent="CanvasLayer/Control/HBoxContainer/Right" unique_id=157441753 instance=ExtResource("1_o5qli")]
+layout_mode = 2
+size_flags_stretch_ratio = 0.1
+
+[node name="Button" type="Button" parent="CanvasLayer/Control/HBoxContainer/Right" unique_id=335120536]
+layout_mode = 2
+theme = ExtResource("2_sugp2")
+text = "Research Lab"
+
+[node name="Spacer" parent="CanvasLayer/Control/HBoxContainer/Right" unique_id=1719655311 instance=ExtResource("1_o5qli")]
+layout_mode = 2
+size_flags_stretch_ratio = 0.1
+
+[node name="Button2" type="Button" parent="CanvasLayer/Control/HBoxContainer/Right" unique_id=1263932650]
+layout_mode = 2
+theme = ExtResource("2_sugp2")
+text = "Colony"
+
+[node name="Spacer2" parent="CanvasLayer/Control/HBoxContainer/Right" unique_id=1448769153 instance=ExtResource("1_o5qli")]
+layout_mode = 2
+size_flags_stretch_ratio = 0.1
+
+[node name="Button3" type="Button" parent="CanvasLayer/Control/HBoxContainer/Right" unique_id=15556025]
+layout_mode = 2
+theme = ExtResource("2_sugp2")
+text = "City"
+
+[node name="Spacer3" parent="CanvasLayer/Control/HBoxContainer/Right" unique_id=55112587 instance=ExtResource("1_o5qli")]
+layout_mode = 2
+
+[node name="Spacer4" parent="CanvasLayer/Control/HBoxContainer" unique_id=1108597796 instance=ExtResource("1_o5qli")]
+layout_mode = 2
+size_flags_stretch_ratio = 0.2
