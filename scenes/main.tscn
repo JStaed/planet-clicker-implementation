@@ -63,7 +63,7 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_stretch_ratio = 0.1
 
-[node name="Button" type="Button" parent="CanvasLayer/Control/HBoxContainer/Left" unique_id=30746600]
+[node name="Satellite" type="Button" parent="CanvasLayer/Control/HBoxContainer/Left" unique_id=30746600]
 layout_mode = 2
 theme = ExtResource("2_sugp2")
 text = "0 Satellite | Cost: 50"
@@ -72,7 +72,7 @@ text = "0 Satellite | Cost: 50"
 layout_mode = 2
 size_flags_stretch_ratio = 0.1
 
-[node name="Button2" type="Button" parent="CanvasLayer/Control/HBoxContainer/Left" unique_id=1994265712]
+[node name="Rover" type="Button" parent="CanvasLayer/Control/HBoxContainer/Left" unique_id=1994265712]
 layout_mode = 2
 theme = ExtResource("2_sugp2")
 text = "0 Rover | Cost: 500"
@@ -81,7 +81,7 @@ text = "0 Rover | Cost: 500"
 layout_mode = 2
 size_flags_stretch_ratio = 0.1
 
-[node name="Button3" type="Button" parent="CanvasLayer/Control/HBoxContainer/Left" unique_id=2004988596]
+[node name="Rocket" type="Button" parent="CanvasLayer/Control/HBoxContainer/Left" unique_id=2004988596]
 layout_mode = 2
 theme = ExtResource("2_sugp2")
 text = "0 Rocket | Cost: 100000"
@@ -174,7 +174,7 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_stretch_ratio = 0.1
 
-[node name="Button" type="Button" parent="CanvasLayer/Control/HBoxContainer/Right" unique_id=335120536]
+[node name="ResearchLab" type="Button" parent="CanvasLayer/Control/HBoxContainer/Right" unique_id=335120536]
 layout_mode = 2
 theme = ExtResource("2_sugp2")
 text = "0 Research Lab | Cost: 2500"
@@ -183,7 +183,7 @@ text = "0 Research Lab | Cost: 2500"
 layout_mode = 2
 size_flags_stretch_ratio = 0.1
 
-[node name="Button2" type="Button" parent="CanvasLayer/Control/HBoxContainer/Right" unique_id=1263932650]
+[node name="Colony" type="Button" parent="CanvasLayer/Control/HBoxContainer/Right" unique_id=1263932650]
 layout_mode = 2
 theme = ExtResource("2_sugp2")
 text = "0 Colony | Cost: 50000"
@@ -192,7 +192,7 @@ text = "0 Colony | Cost: 50000"
 layout_mode = 2
 size_flags_stretch_ratio = 0.1
 
-[node name="Button3" type="Button" parent="CanvasLayer/Control/HBoxContainer/Right" unique_id=15556025]
+[node name="City" type="Button" parent="CanvasLayer/Control/HBoxContainer/Right" unique_id=15556025]
 layout_mode = 2
 theme = ExtResource("2_sugp2")
 text = "0 City | Cost: 200000"
@@ -204,5 +204,6 @@ layout_mode = 2
 layout_mode = 2
 size_flags_stretch_ratio = 0.2
 
-[connection signal="pressed" from="CanvasLayer/Control/HBoxContainer/Left/Button" to="CanvasLayer/Control" method="_on_satellite_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/HBoxContainer/Left/Satellite" to="CanvasLayer/Control" method="_on_satellite_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/HBoxContainer/Left/Rover" to="CanvasLayer/Control" method="_on_rover_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/HBoxContainer/Middle/PlanetButton" to="CanvasLayer/Control" method="_on_planet_button_pressed"]

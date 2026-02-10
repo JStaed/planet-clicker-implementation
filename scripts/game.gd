@@ -31,12 +31,25 @@ func update_labels() -> void:
 	$HBoxContainer/Middle/Score.text = "Score: " + str(score)
 	$HBoxContainer/Middle/ScorePerSecond.text = "Score Per Second: " + str(score_per_second)
 	$HBoxContainer/Middle/ScorePerClick.text = "Score Per Click: " + str(score_per_click)
-	$HBoxContainer/Left/Button.text = str(level[0]) + " Satellite | Cost: " + str(cost[0])
+	$HBoxContainer/Left/Satellite.text = str(level[0]) + " Satellite | Cost: " + str(cost[0])
+	$HBoxContainer/Left/Rover.text = str(level[1]) + " Rover | Cost: " + str(cost[1])
+	$HBoxContainer/Left/Rocket.text = str(level[2]) + " Rocket | Cost: " + str(cost[2])
+	$HBoxContainer/Right/ResearchLab.text = str(level[3]) + " Satellite | Cost: " + str(cost[3])
+	$HBoxContainer/Right/Colony.text = str(level[4]) + " Rover | Cost: " + str(cost[4])
+	$HBoxContainer/Right/City.text = str(level[5]) + " Rocket | Cost: " + str(cost[5])
+	
+
+func purchase_upgrade(id: int) -> void:
+	if score >= cost[id]:
+		score -= cost[id]
+		cost[id] = int(floor(COST_FACTOR * cost[id]))
+		level[id] += 1
+		score_per_second += upgrade[id]
+		update_labels()
 
 func _on_satellite_button_pressed() -> void:
-	if score >= cost[0]:
-		score -= cost[0]
-		cost[0] = int(floor(COST_FACTOR * cost[0]))
-		level[0] += 1
-		score_per_second += upgrade[0]
-		update_labels()
+	purchase_upgrade(0)
+
+
+func _on_rover_button_pressed() -> void:
+	purchase_upgrade(1)
