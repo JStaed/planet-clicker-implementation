@@ -2,7 +2,7 @@ extends Control
 
 const COST_FACTOR: float = 1.2
 
-var score: int = 500000
+var score: int = 0
 var score_per_second: int = 0
 var score_per_click: int = 1
 
@@ -25,7 +25,6 @@ func _ready() -> void:
 func _on_planet_button_pressed() -> void:
 	score += score_per_click
 	update_labels()
-
 
 func update_labels() -> void:
 	$HBoxContainer/Middle/Score.text = "Score: " + str(score)
@@ -68,3 +67,8 @@ func _on_colony_button_pressed() -> void:
 
 func _on_city_button_pressed() -> void:
 	purchase_upgrade(5)
+
+
+func _on_score_per_second_timeout() -> void:
+	score += score_per_second
+	update_labels()
