@@ -2,7 +2,7 @@ extends Control
 
 const COST_FACTOR: float = 1.2
 
-var score: int = 0
+var score: int = 500000
 var score_per_second: int = 0
 var score_per_click: int = 1
 
@@ -41,15 +41,30 @@ func update_labels() -> void:
 
 func purchase_upgrade(id: int) -> void:
 	if score >= cost[id]:
+		if id < 3:
+			score_per_second += upgrade[id]
+		else:
+			score_per_click += upgrade[id]
 		score -= cost[id]
 		cost[id] = int(floor(COST_FACTOR * cost[id]))
 		level[id] += 1
-		score_per_second += upgrade[id]
 		update_labels()
+		
 
 func _on_satellite_button_pressed() -> void:
 	purchase_upgrade(0)
 
-
 func _on_rover_button_pressed() -> void:
 	purchase_upgrade(1)
+
+func _on_rocket_button_pressed() -> void:
+	purchase_upgrade(2)
+
+func _on_research_lab_button_pressed() -> void:
+	purchase_upgrade(3)
+
+func _on_colony_button_pressed() -> void:
+	purchase_upgrade(4)
+
+func _on_city_button_pressed() -> void:
+	purchase_upgrade(5)

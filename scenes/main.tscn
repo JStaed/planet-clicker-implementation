@@ -206,4 +206,8 @@ size_flags_stretch_ratio = 0.2
 
 [connection signal="pressed" from="CanvasLayer/Control/HBoxContainer/Left/Satellite" to="CanvasLayer/Control" method="_on_satellite_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/HBoxContainer/Left/Rover" to="CanvasLayer/Control" method="_on_rover_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/HBoxContainer/Left/Rocket" to="CanvasLayer/Control" method="_on_rocket_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/HBoxContainer/Middle/PlanetButton" to="CanvasLayer/Control" method="_on_planet_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/HBoxContainer/Right/ResearchLab" to="CanvasLayer/Control" method="_on_research_lab_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/HBoxContainer/Right/Colony" to="CanvasLayer/Control" method="_on_colony_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/HBoxContainer/Right/City" to="CanvasLayer/Control" method="_on_city_button_pressed"]
